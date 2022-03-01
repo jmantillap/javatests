@@ -1,13 +1,27 @@
 package com.platzi.javatest.util;
 
+import org.junit.Assert;
+import org.junit.Test;
 
 public class StringUtilTest {
 
-    public static void main(String[] args) {
-         String result= StringUtil.repeat("Hola",3);
-         System.out.println(result);
+    @Test
+    public void repeat_string_once() {
+        Assert.assertEquals("hola", StringUtil.repeat("hola", 1));
+    }
 
-        String result2= StringUtil.repeat("Hola",1);
-        System.out.println(result2);
+    @Test
+    public void repeat_string_multiple_times() {
+        Assert.assertEquals("holaholahola", StringUtil.repeat("hola", 3));
+    }
+
+    @Test
+    public void repeat_string_zero_times() {
+        Assert.assertEquals("", StringUtil.repeat("hola", 0));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void repeat_string_negative_times() {
+        StringUtil.repeat("hola", -1);
     }
 }
