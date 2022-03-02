@@ -24,8 +24,7 @@ public class PaymentProcessorTest {
         Mockito.when(paymentGateway.requestPayment(Mockito.any()))
                 .thenReturn(new PaymentResponse(PaymentResponse.PaymentStatus.OK));
         //PaymentProcessor paymentProcessor = new PaymentProcessor(paymentGateway);
-        assertTrue(paymentProcessor.makePayment(1000));
-        
+        assertTrue(paymentProcessor.makePayment(1000));        
     }
 
     @Test
