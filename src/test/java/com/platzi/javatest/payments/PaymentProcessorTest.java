@@ -25,6 +25,7 @@ public class PaymentProcessorTest {
                 .thenReturn(new PaymentResponse(PaymentResponse.PaymentStatus.OK));
         //PaymentProcessor paymentProcessor = new PaymentProcessor(paymentGateway);
         assertTrue(paymentProcessor.makePayment(1000));
+        
     }
 
     @Test
